@@ -1,0 +1,793 @@
+<title>30 Softwares MIT para revender no Mercado Livre</title>
+<style>
+  :root {
+    --paper: #F7F4ED;
+    --surface: #FFFFFF;
+    --surface-2: #FBF9F3;
+    --ink: #1A1712;
+    --ink-soft: #5C554A;
+    --ink-faint: #8C8474;
+    --line: #E7DFCF;
+    --line-strong: #D8CDB6;
+    --accent: #B26E09;
+    --accent-ink: #7A4B04;
+    --accent-soft: #F4E6C8;
+    --good: #1C824F;
+    --good-soft: #DCEEE2;
+    --warn: #A9531B;
+    --warn-soft: #F5E3D0;
+    --danger: #A83636;
+    --shadow: 0 1px 2px rgba(26,23,18,.05), 0 8px 24px rgba(26,23,18,.06);
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131109;
+      --surface: #1C190F;
+      --surface-2: #211D12;
+      --ink: #F1EADA;
+      --ink-soft: #A79E8B;
+      --ink-faint: #7C7360;
+      --line: #2E291B;
+      --line-strong: #3B3423;
+      --accent: #E4A63A;
+      --accent-ink: #F0C169;
+      --accent-soft: #35290F;
+      --good: #4CB981;
+      --good-soft: #16311F;
+      --warn: #D98A4E;
+      --warn-soft: #33220F;
+      --danger: #D86A6A;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #F7F4ED; --surface: #FFFFFF; --surface-2: #FBF9F3;
+    --ink: #1A1712; --ink-soft: #5C554A; --ink-faint: #8C8474;
+    --line: #E7DFCF; --line-strong: #D8CDB6;
+    --accent: #B26E09; --accent-ink: #7A4B04; --accent-soft: #F4E6C8;
+    --good: #1C824F; --good-soft: #DCEEE2; --warn: #A9531B; --warn-soft: #F5E3D0;
+    --danger: #A83636; --shadow: 0 1px 2px rgba(26,23,18,.05), 0 8px 24px rgba(26,23,18,.06);
+  }
+  :root[data-theme="dark"] {
+    --paper: #131109; --surface: #1C190F; --surface-2: #211D12;
+    --ink: #F1EADA; --ink-soft: #A79E8B; --ink-faint: #7C7360;
+    --line: #2E291B; --line-strong: #3B3423;
+    --accent: #E4A63A; --accent-ink: #F0C169; --accent-soft: #35290F;
+    --good: #4CB981; --good-soft: #16311F; --warn: #D98A4E; --warn-soft: #33220F;
+    --danger: #D86A6A; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- Header ---- */
+  header.masthead {
+    border-bottom: 2px solid var(--ink);
+    background:
+      linear-gradient(180deg, var(--surface-2), var(--surface));
+  }
+  .masthead .wrap { padding-top: 44px; padding-bottom: 34px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .eyebrow .tick { color: var(--good); }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(30px, 5.4vw, 52px);
+    line-height: 1.04;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+    margin: 14px 0 12px;
+  }
+  h1 .amt { color: var(--accent); font-style: italic; }
+  .lede {
+    font-size: clamp(15px, 1.7vw, 18px);
+    color: var(--ink-soft);
+    max-width: 66ch;
+    margin: 0;
+  }
+  .meta-row {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-faint);
+  }
+  .meta-row span {
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 4px 11px;
+    background: var(--surface);
+  }
+
+  /* ---- KPI strip ---- */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 34px 0 0;
+    box-shadow: var(--shadow);
+  }
+  .kpi { background: var(--surface); padding: 18px 18px 16px; }
+  .kpi .k-label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+  .kpi .k-val {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(22px, 3vw, 30px); margin-top: 6px; letter-spacing: -.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .kpi .k-sub { font-size: 12px; color: var(--ink-soft); margin-top: 3px; }
+  .kpi .k-val small { font-size: 14px; color: var(--ink-soft); font-family: var(--sans); font-weight: 600; }
+
+  /* ---- Sections ---- */
+  section { padding: 46px 0; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; flex-wrap: wrap; }
+  .sec-num {
+    font-family: var(--mono); font-size: 12px; color: var(--accent);
+    letter-spacing: .1em; padding-top: 4px;
+  }
+  h2 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(22px, 3.2vw, 30px); letter-spacing: -.01em;
+    margin: 0; text-wrap: balance;
+  }
+  .sec-sub { color: var(--ink-soft); max-width: 70ch; margin: 10px 0 26px; font-size: 15px; }
+
+  /* ---- Ranking table ---- */
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 14px; }
+  thead th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    padding: 14px 14px;
+    border-bottom: 1.5px solid var(--line-strong);
+    background: var(--surface-2);
+    position: sticky; top: 0;
+  }
+  tbody td { padding: 13px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--surface-2); }
+  .rank {
+    font-family: var(--serif); font-weight: 700; font-size: 19px;
+    font-variant-numeric: tabular-nums; color: var(--ink);
+    width: 38px;
+  }
+  tr.top3 .rank { color: var(--accent); }
+  .prod-name { font-weight: 650; font-size: 14.5px; }
+  .prod-name a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .prod-name a:hover { border-color: var(--accent); color: var(--accent-ink); }
+  .prod-desc { color: var(--ink-soft); font-size: 12.5px; margin-top: 3px; max-width: 34ch; }
+  .cat { font-size: 12.5px; color: var(--ink-soft); }
+  .cat code { font-family: var(--mono); font-size: 11px; color: var(--ink); background: var(--surface-2); padding: 1px 5px; border-radius: 4px; border: 1px solid var(--line); }
+  .price { font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .lic {
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+    padding: 3px 8px; border-radius: 5px; white-space: nowrap;
+    border: 1px solid transparent; letter-spacing: .02em;
+  }
+  .lic.mit { background: var(--good-soft); color: var(--good); border-color: color-mix(in srgb, var(--good) 30%, transparent); }
+  .lic.apache { background: var(--accent-soft); color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
+  .lic.bsd { background: var(--accent-soft); color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
+
+  .demand { display: flex; align-items: center; gap: 8px; }
+  .bar { --v: 3; width: 54px; height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; flex: none; }
+  .bar > i { display: block; height: 100%; width: calc(var(--v) / 5 * 100%); background: var(--accent); border-radius: 999px; }
+  .demand.high .bar > i { background: var(--good); }
+  .demand small { font-size: 11px; color: var(--ink-faint); font-family: var(--mono); }
+
+  .effort { font-family: var(--mono); letter-spacing: 2px; font-size: 12px; }
+  .effort .on { color: var(--warn); }
+  .effort .off { color: var(--line-strong); }
+
+  .score {
+    font-family: var(--serif); font-weight: 700; font-size: 17px;
+    font-variant-numeric: tabular-nums; color: var(--ink);
+  }
+  .score-bar { height: 4px; border-radius: 999px; background: var(--line); margin-top: 5px; overflow: hidden; }
+  .score-bar > i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+  tr.top3 .score-bar > i { background: var(--good); }
+
+  /* ---- Two-column cards ---- */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 22px 22px; box-shadow: var(--shadow);
+  }
+  .card h3 {
+    font-family: var(--serif); font-size: 19px; margin: 0 0 4px; font-weight: 700;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .card h3 .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+  .card p { margin: 8px 0; color: var(--ink-soft); font-size: 14px; }
+  .card ul { margin: 10px 0 0; padding-left: 0; list-style: none; }
+  .card li { padding: 7px 0 7px 22px; position: relative; font-size: 14px; border-top: 1px solid var(--line); }
+  .card li:first-child { border-top: none; }
+  .card li::before {
+    content: "→"; position: absolute; left: 0; top: 7px;
+    color: var(--accent); font-family: var(--mono); font-size: 13px;
+  }
+  .card li b { font-weight: 650; }
+
+  .callout {
+    border: 1px solid color-mix(in srgb, var(--danger) 40%, var(--line));
+    background: color-mix(in srgb, var(--danger) 7%, var(--surface));
+    border-left: 4px solid var(--danger);
+    border-radius: 10px; padding: 16px 18px; margin-top: 20px;
+  }
+  .callout h4 { margin: 0 0 6px; font-size: 14px; font-family: var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--danger); }
+  .callout p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+
+  .note-good {
+    border: 1px solid color-mix(in srgb, var(--good) 40%, var(--line));
+    background: color-mix(in srgb, var(--good) 7%, var(--surface));
+    border-left: 4px solid var(--good);
+    border-radius: 10px; padding: 16px 18px; margin-top: 20px;
+  }
+  .note-good h4 { margin: 0 0 6px; font-size: 14px; font-family: var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--good); }
+  .note-good p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+
+  /* ---- Playbook steps ---- */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+  .step .s-n { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: .1em; }
+  .step h4 { margin: 8px 0 6px; font-size: 15px; font-family: var(--serif); font-weight: 700; }
+  .step p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+
+  footer { border-top: 2px solid var(--ink); padding: 30px 0 60px; }
+  footer .wrap { display: flex; flex-direction: column; gap: 10px; }
+  .foot-title { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+  footer p { margin: 0; font-size: 12.5px; color: var(--ink-soft); max-width: 80ch; }
+  footer a { color: var(--accent-ink); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 18px 0 0; font-size: 12px; color: var(--ink-soft); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; }
+  .legend i { width: 22px; height: 6px; border-radius: 999px; display: inline-block; }
+
+  @media (max-width: 860px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .cols { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .kpis { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    tbody tr { transition: background .12s ease; }
+    .prod-name a { transition: color .12s ease, border-color .12s ease; }
+  }
+  a:focus-visible, tr:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span>Análise de mercado</span>
+      <span class="tick">● Licenças verificadas no GitHub</span>
+      <span>Julho 2026</span>
+    </div>
+    <h1>Softwares de código aberto que você pode <span class="amt">revender legalmente</span> no Mercado Livre</h1>
+    <p class="lede">Trinta projetos com licença permissiva (MIT, Apache&#8209;2.0, BSD) — que a lei permite empacotar, personalizar, fechar o código e vender — cruzados com a demanda real e as faixas de preço praticadas nas categorias de "sistema" e "código fonte" do Mercado Livre.</p>
+    <div class="meta-row">
+      <span>30 produtos ranqueados</span>
+      <span>Base: 3 frentes de pesquisa</span>
+      <span>Foco: PMEs brasileiras</span>
+      <span>Somente licenças permissivas</span>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="k-label">Ticket típico no ML</div>
+        <div class="k-val">R$ 90–300</div>
+        <div class="k-sub">Sistemas / código fonte completo</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Scripts e templates</div>
+        <div class="k-val">R$ 15–60</div>
+        <div class="k-sub">Alto volume, baixo ticket</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Categoria mais quente</div>
+        <div class="k-val">PDV<small> / código fonte</small></div>
+        <div class="k-sub">Listagem com 466 avaliações</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Regra de ouro da licença</div>
+        <div class="k-val">Rebrand<small> + manter aviso</small></div>
+        <div class="k-sub">Marca ≠ licença</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="ranking">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <h2>Os 30 mais lucrativos</h2>
+    </div>
+    <p class="sec-sub">Ordenados por um <b>Índice de Lucro</b> que combina demanda no Mercado Livre, preço alcançável, baixo esforço de customização e segurança de licença. Todos são revendáveis desde que você renomeie o produto e preserve o texto da licença original no código.</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Produto &amp; o que é</th>
+            <th>Categoria no ML</th>
+            <th>Licença</th>
+            <th>Preço ML</th>
+            <th>Demanda</th>
+            <th>Esforço</th>
+            <th>Índice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1 -->
+          <tr class="top3">
+            <td class="rank">1</td>
+            <td><div class="prod-name"><a href="https://github.com/chatwoot/chatwoot" target="_blank" rel="noopener">Chatwoot</a></div><div class="prod-desc">Central de atendimento omnichannel (WhatsApp, Instagram, chat) — CRM + caixa de entrada.</div></td>
+            <td class="cat">Atendimento / <code>bot whatsapp</code></td>
+            <td><span class="lic mit">MIT*</span></td>
+            <td class="price">R$ 300–900</td>
+            <td><div class="demand high"><span class="bar" style="--v:5"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">96</div><div class="score-bar"><i style="width:96%"></i></div></td>
+          </tr>
+          <!-- 2 -->
+          <tr class="top3">
+            <td class="rank">2</td>
+            <td><div class="prod-name"><a href="https://github.com/bagisto/bagisto" target="_blank" rel="noopener">Bagisto</a></div><div class="prod-desc">Loja virtual completa em Laravel + Vue. Admin, estoque, checkout.</div></td>
+            <td class="cat">Loja / <code>ecommerce php</code></td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 150–800</td>
+            <td><div class="demand high"><span class="bar" style="--v:5"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">94</div><div class="score-bar"><i style="width:94%"></i></div></td>
+          </tr>
+          <!-- 3 -->
+          <tr class="top3">
+            <td class="rank">3</td>
+            <td><div class="prod-name"><a href="https://github.com/NifrasUsanar/InfoShop" target="_blank" rel="noopener">InfoShop</a></div><div class="prod-desc">PDV / caixa + controle de estoque em Laravel. A base MIT para "sistema PDV".</div></td>
+            <td class="cat"><code>sistema pdv</code> / caixa</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 90–250</td>
+            <td><div class="demand high"><span class="bar" style="--v:5"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">93</div><div class="score-bar"><i style="width:93%"></i></div></td>
+          </tr>
+          <!-- 4 -->
+          <tr>
+            <td class="rank">4</td>
+            <td><div class="prod-name"><a href="https://github.com/calcom/cal.diy" target="_blank" rel="noopener">Cal.diy</a></div><div class="prod-desc">Agendamento online — ideal para barbearia, salão e clínica. (Relicenciado p/ MIT em 2026.)</div></td>
+            <td class="cat"><code>sistema agendamento</code></td>
+            <td><span class="lic mit">MIT*</span></td>
+            <td class="price">R$ 120–350</td>
+            <td><div class="demand high"><span class="bar" style="--v:4"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">91</div><div class="score-bar"><i style="width:91%"></i></div></td>
+          </tr>
+          <!-- 5 -->
+          <tr>
+            <td class="rank">5</td>
+            <td><div class="prod-name"><a href="https://github.com/rezadrian01/Kasirku" target="_blank" rel="noopener">Kasirku</a></div><div class="prod-desc">PDV para restaurante/lanchonete: cardápio digital, impressão térmica, acompanhamento de pedido.</div></td>
+            <td class="cat"><code>cardapio digital</code> / PDV</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 90–250</td>
+            <td><div class="demand high"><span class="bar" style="--v:4"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">89</div><div class="score-bar"><i style="width:89%"></i></div></td>
+          </tr>
+          <!-- 6 -->
+          <tr>
+            <td class="rank">6</td>
+            <td><div class="prod-name"><a href="https://github.com/WhiskeySockets/Baileys" target="_blank" rel="noopener">Baileys</a></div><div class="prod-desc">Motor de bots de WhatsApp (WebSocket). Base de inúmeros produtos de automação BR.</div></td>
+            <td class="cat"><code>bot whatsapp</code></td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 40–200</td>
+            <td><div class="demand high"><span class="bar" style="--v:5"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●●</span></td>
+            <td><div class="score">88</div><div class="score-bar"><i style="width:88%"></i></div></td>
+          </tr>
+          <!-- 7 -->
+          <tr>
+            <td class="rank">7</td>
+            <td><div class="prod-name"><a href="https://github.com/medusajs/medusa" target="_blank" rel="noopener">Medusa</a></div><div class="prod-desc">E-commerce headless de ponta (Node/TS). Starter Next.js também MIT.</div></td>
+            <td class="cat">Loja / marketplace</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 200–1.000</td>
+            <td><div class="demand"><span class="bar" style="--v:4"><i></i></span><small>média-alta</small></div></td>
+            <td class="effort"><span class="on">●●●</span></td>
+            <td><div class="score">86</div><div class="score-bar"><i style="width:86%"></i></div></td>
+          </tr>
+          <!-- 8 -->
+          <tr>
+            <td class="rank">8</td>
+            <td><div class="prod-name"><a href="https://github.com/pedroslopez/whatsapp-web.js" target="_blank" rel="noopener">whatsapp-web.js</a></div><div class="prod-desc">Biblioteca de automação de WhatsApp — atendimento e disparos.</div></td>
+            <td class="cat"><code>bot whatsapp</code></td>
+            <td><span class="lic apache">Apache-2.0</span></td>
+            <td class="price">R$ 40–200</td>
+            <td><div class="demand high"><span class="bar" style="--v:4"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●●</span></td>
+            <td><div class="score">85</div><div class="score-bar"><i style="width:85%"></i></div></td>
+          </tr>
+          <!-- 9 -->
+          <tr>
+            <td class="rank">9</td>
+            <td><div class="prod-name"><a href="https://github.com/krayin/laravel-crm" target="_blank" rel="noopener">Krayin CRM</a></div><div class="prod-desc">CRM em Laravel/Vue — funil de vendas e contatos. Ótimo encaixe para PME.</div></td>
+            <td class="cat">CRM / gestão</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 120–400</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">83</div><div class="score-bar"><i style="width:83%"></i></div></td>
+          </tr>
+          <!-- 10 -->
+          <tr>
+            <td class="rank">10</td>
+            <td><div class="prod-name"><a href="https://github.com/umami-software/umami" target="_blank" rel="noopener">Umami</a></div><div class="prod-desc">Analytics de site com foco em privacidade (alternativa ao Google Analytics). Muito polido.</div></td>
+            <td class="cat">Analytics / painel</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 150–500</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">82</div><div class="score-bar"><i style="width:82%"></i></div></td>
+          </tr>
+          <!-- 11 -->
+          <tr>
+            <td class="rank">11</td>
+            <td><div class="prod-name"><a href="https://github.com/TryGhost/Ghost" target="_blank" rel="noopener">Ghost</a></div><div class="prod-desc">Blog/newsletter com assinatura paga e área de membros. Extremamente polido.</div></td>
+            <td class="cat">Site / newsletter paga</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 200–700</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">80</div><div class="score-bar"><i style="width:80%"></i></div></td>
+          </tr>
+          <!-- 12 -->
+          <tr>
+            <td class="rank">12</td>
+            <td><div class="prod-name"><a href="https://github.com/grocy/grocy" target="_blank" rel="noopener">Grocy</a></div><div class="prod-desc">Controle de estoque/validade (ERP-lite). Raro projeto de estoque permissivo.</div></td>
+            <td class="cat"><code>controle de estoque</code></td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 90–300</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">79</div><div class="score-bar"><i style="width:79%"></i></div></td>
+          </tr>
+          <!-- 13 -->
+          <tr>
+            <td class="rank">13</td>
+            <td><div class="prod-name"><a href="https://github.com/GrapesJS/grapesjs" target="_blank" rel="noopener">GrapesJS</a></div><div class="prod-desc">Construtor visual de páginas (drag-and-drop). Base para produtos "criador de landing page".</div></td>
+            <td class="cat"><code>landing page</code> / site</td>
+            <td><span class="lic bsd">BSD-3</span></td>
+            <td class="price">R$ 60–300</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">78</div><div class="score-bar"><i style="width:78%"></i></div></td>
+          </tr>
+          <!-- 14 -->
+          <tr>
+            <td class="rank">14</td>
+            <td><div class="prod-name"><a href="https://github.com/SolidInvoice/SolidInvoice" target="_blank" rel="noopener">SolidInvoice</a></div><div class="prod-desc">Sistema de orçamentos e faturamento (Symfony). A opção MIT limpa de "financeiro".</div></td>
+            <td class="cat">Financeiro / faturamento</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 100–350</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">77</div><div class="score-bar"><i style="width:77%"></i></div></td>
+          </tr>
+          <!-- 15 -->
+          <tr>
+            <td class="rank">15</td>
+            <td><div class="prod-name"><a href="https://github.com/appsmithorg/appsmith" target="_blank" rel="noopener">Appsmith</a></div><div class="prod-desc">Low-code p/ montar painéis internos e ERPs sob medida rapidamente.</div></td>
+            <td class="cat">Painel / ERP-lite</td>
+            <td><span class="lic apache">Apache-2.0</span></td>
+            <td class="price">R$ 300–1.500</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>média-baixa</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">76</div><div class="score-bar"><i style="width:76%"></i></div></td>
+          </tr>
+          <!-- 16 -->
+          <tr>
+            <td class="rank">16</td>
+            <td><div class="prod-name"><a href="https://github.com/sethcottle/littlelink" target="_blank" rel="noopener">LittleLink</a></div><div class="prod-desc">Página de links "link na bio" (tipo Linktree). Trivial de renomear e vender.</div></td>
+            <td class="cat"><code>pagina de links</code></td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 20–80</td>
+            <td><div class="demand high"><span class="bar" style="--v:4"><i></i></span><small>alta (volume)</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">75</div><div class="score-bar"><i style="width:75%"></i></div></td>
+          </tr>
+          <!-- 17 -->
+          <tr>
+            <td class="rank">17</td>
+            <td><div class="prod-name"><a href="https://github.com/thedevs-network/kutt" target="_blank" rel="noopener">Kutt</a></div><div class="prod-desc">Encurtador de links com painel e estatísticas. Deploy fácil, visual bom.</div></td>
+            <td class="cat"><code>encurtador de link</code></td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 40–150</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">74</div><div class="score-bar"><i style="width:74%"></i></div></td>
+          </tr>
+          <!-- 18 -->
+          <tr>
+            <td class="rank">18</td>
+            <td><div class="prod-name"><a href="https://github.com/kozakdenys/qr-code-styling" target="_blank" rel="noopener">qr-code-styling</a></div><div class="prod-desc">Gerador de QR Code estilizado com logo. Base p/ "gerador de QR Code" e cardápio.</div></td>
+            <td class="cat"><code>gerador qr code</code></td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 20–100</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">73</div><div class="score-bar"><i style="width:73%"></i></div></td>
+          </tr>
+          <!-- 19 -->
+          <tr>
+            <td class="rank">19</td>
+            <td><div class="prod-name"><a href="https://github.com/strapi/strapi" target="_blank" rel="noopener">Strapi</a></div><div class="prod-desc">CMS headless — backend para catálogos, cardápios e sites. (Núcleo MIT; remova a pasta <code>ee/</code>.)</div></td>
+            <td class="cat">Backend / CMS</td>
+            <td><span class="lic mit">MIT*</span></td>
+            <td class="price">R$ 150–600</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>média-baixa</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">72</div><div class="score-bar"><i style="width:72%"></i></div></td>
+          </tr>
+          <!-- 20 -->
+          <tr>
+            <td class="rank">20</td>
+            <td><div class="prod-name"><a href="https://github.com/BookStackApp/BookStack" target="_blank" rel="noopener">BookStack</a></div><div class="prod-desc">Base de conhecimento / wiki corporativa. Polido, fácil de renomear.</div></td>
+            <td class="cat">Wiki / base de conhecimento</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 100–350</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>média-baixa</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">71</div><div class="score-bar"><i style="width:71%"></i></div></td>
+          </tr>
+          <!-- 21 -->
+          <tr>
+            <td class="rank">21</td>
+            <td><div class="prod-name"><a href="https://github.com/botpress/botpress" target="_blank" rel="noopener">Botpress</a></div><div class="prod-desc">Construtor de chatbots / agentes. Venda como serviço de bot.</div></td>
+            <td class="cat">Chatbot</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 100–500</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média</small></div></td>
+            <td class="effort"><span class="on">●●●</span></td>
+            <td><div class="score">70</div><div class="score-bar"><i style="width:70%"></i></div></td>
+          </tr>
+          <!-- 22 -->
+          <tr>
+            <td class="rank">22</td>
+            <td><div class="prod-name"><a href="https://github.com/measuredco/puck" target="_blank" rel="noopener">Puck</a></div><div class="prod-desc">Editor visual React p/ montar páginas. Produto "construtor de sites".</div></td>
+            <td class="cat"><code>landing page</code> / builder</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 60–300</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>média-baixa</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">69</div><div class="score-bar"><i style="width:69%"></i></div></td>
+          </tr>
+          <!-- 23 -->
+          <tr>
+            <td class="rank">23</td>
+            <td><div class="prod-name"><a href="https://github.com/orkestral/venom" target="_blank" rel="noopener">Venom</a></div><div class="prod-desc">Framework de bots de WhatsApp. Alternativa de motor de automação.</div></td>
+            <td class="cat"><code>bot whatsapp</code></td>
+            <td><span class="lic apache">Apache-2.0</span></td>
+            <td class="price">R$ 40–200</td>
+            <td><div class="demand high"><span class="bar" style="--v:4"><i></i></span><small>alta</small></div></td>
+            <td class="effort"><span class="on">●●●</span></td>
+            <td><div class="score">68</div><div class="score-bar"><i style="width:68%"></i></div></td>
+          </tr>
+          <!-- 24 -->
+          <tr>
+            <td class="rank">24</td>
+            <td><div class="prod-name"><a href="https://github.com/tabler/tabler" target="_blank" rel="noopener">Tabler</a></div><div class="prod-desc">Template de painel admin (Bootstrap 5). Vendável como tema/base pronta.</div></td>
+            <td class="cat"><code>template admin</code> / dashboard</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 30–150</td>
+            <td><div class="demand"><span class="bar" style="--v:3"><i></i></span><small>média (volume)</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">67</div><div class="score-bar"><i style="width:67%"></i></div></td>
+          </tr>
+          <!-- 25 -->
+          <tr>
+            <td class="rank">25</td>
+            <td><div class="prod-name"><a href="https://github.com/phaserjs/phaser" target="_blank" rel="noopener">Phaser</a></div><div class="prod-desc">Motor de jogos HTML5 + 2000 exemplos. Venda templates de jogo prontos.</div></td>
+            <td class="cat"><code>jogo html5</code> / template</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 40–200</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>nicho</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">65</div><div class="score-bar"><i style="width:65%"></i></div></td>
+          </tr>
+          <!-- 26 -->
+          <tr>
+            <td class="rank">26</td>
+            <td><div class="prod-name"><a href="https://github.com/infinitered/ignite" target="_blank" rel="noopener">Ignite</a></div><div class="prod-desc">Boilerplate React Native/Expo. Base p/ vender "starter de app mobile".</div></td>
+            <td class="cat"><code>template app</code> mobile</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 80–400</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>nicho</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">64</div><div class="score-bar"><i style="width:64%"></i></div></td>
+          </tr>
+          <!-- 27 -->
+          <tr>
+            <td class="rank">27</td>
+            <td><div class="prod-name"><a href="https://github.com/kanboard/kanboard" target="_blank" rel="noopener">Kanboard</a></div><div class="prod-desc">Kanban simples e estável (PHP). Gestão de tarefas para equipes pequenas.</div></td>
+            <td class="cat">Gestão de tarefas</td>
+            <td><span class="lic mit">MIT</span></td>
+            <td class="price">R$ 60–250</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>média-baixa</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">63</div><div class="score-bar"><i style="width:63%"></i></div></td>
+          </tr>
+          <!-- 28 -->
+          <tr>
+            <td class="rank">28</td>
+            <td><div class="prod-name"><a href="https://github.com/saleor/saleor" target="_blank" rel="noopener">Saleor</a></div><div class="prod-desc">E-commerce headless moderno (Python/GraphQL). Para lojas maiores.</div></td>
+            <td class="cat">Loja / marketplace</td>
+            <td><span class="lic bsd">BSD-3</span></td>
+            <td class="price">R$ 200–1.000</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>média-baixa</small></div></td>
+            <td class="effort"><span class="on">●●●</span></td>
+            <td><div class="score">62</div><div class="score-bar"><i style="width:62%"></i></div></td>
+          </tr>
+          <!-- 29 -->
+          <tr>
+            <td class="rank">29</td>
+            <td><div class="prod-name"><a href="https://github.com/filebrowser/filebrowser" target="_blank" rel="noopener">File Browser</a></div><div class="prod-desc">Gerenciador de arquivos web ("meu drive"). Binário único, deploy simples.</div></td>
+            <td class="cat">Nuvem / armazenamento</td>
+            <td><span class="lic apache">Apache-2.0</span></td>
+            <td class="price">R$ 60–250</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>nicho</small></div></td>
+            <td class="effort"><span class="on">●</span><span class="off">●●</span></td>
+            <td><div class="score">60</div><div class="score-bar"><i style="width:60%"></i></div></td>
+          </tr>
+          <!-- 30 -->
+          <tr>
+            <td class="rank">30</td>
+            <td><div class="prod-name"><a href="https://github.com/surveyjs/survey-library" target="_blank" rel="noopener">SurveyJS</a></div><div class="prod-desc">Renderizador de formulários/pesquisas via JSON. (Runtime MIT; o construtor drag-drop é pago.)</div></td>
+            <td class="cat">Formulários / pesquisas</td>
+            <td><span class="lic mit">MIT*</span></td>
+            <td class="price">R$ 40–200</td>
+            <td><div class="demand"><span class="bar" style="--v:2"><i></i></span><small>nicho</small></div></td>
+            <td class="effort"><span class="on">●●</span><span class="off">●</span></td>
+            <td><div class="score">58</div><div class="score-bar"><i style="width:58%"></i></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legend">
+      <span><i style="background:var(--good)"></i> Demanda alta</span>
+      <span><i style="background:var(--accent)"></i> Demanda média/nicho</span>
+      <span class="effort"><span class="on">●●●</span> = mais esforço de customização</span>
+      <span>* núcleo permissivo — remova a pasta <code style="font-family:var(--mono)">enterprise/</code> ou <code style="font-family:var(--mono)">ee/</code></span>
+    </div>
+  </div>
+</section>
+
+<section id="licenca" style="background:var(--surface-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <h2>O que a licença permite — e o que te derruba</h2>
+    </div>
+    <p class="sec-sub">A licença permissiva é o que torna a revenda legal. Mas a maioria dos vendedores erra em dois pontos: confunde marca com licença, e escolhe projetos copyleft achando que são livres.</p>
+
+    <div class="cols">
+      <div class="card">
+        <h3><span class="dot" style="background:var(--good)"></span> Pode revender (permissivas)</h3>
+        <p><b>MIT · Apache-2.0 · BSD · ISC.</b> Você pode empacotar, personalizar, fechar o código e vender como produto seu.</p>
+        <ul>
+          <li><b>Mantenha o texto da licença</b> e o aviso de copyright original dentro do código entregue.</li>
+          <li><b>Apache-2.0</b> exige preservar o arquivo <code style="font-family:var(--mono);font-size:12px">NOTICE</code> e declarar mudanças — ainda assim pode vender.</li>
+          <li><b>Renomeie o produto</b> (nome + logo novos). Vender sob o nome "Chatwoot", "Medusa" etc. viola a marca, mesmo com licença MIT.</li>
+          <li><b>Remova pastas <code style="font-family:var(--mono);font-size:12px">enterprise/</code>, <code style="font-family:var(--mono);font-size:12px">ee/</code></b> — elas têm licença comercial separada (Chatwoot, Strapi, Cal.diy).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="dot" style="background:var(--danger)"></span> Evite ou tome cuidado</h3>
+        <p><b>Copyleft e "source-available"</b> são armadilhas comuns em projetos populares.</p>
+        <ul>
+          <li><b>GPL / AGPL / LGPL:</b> revenda é legal, mas você é <b>obrigado a entregar o código-fonte</b> e manter a mesma licença. AGPL exige abrir o código até para uso via internet. Ex.: ERPNext, Odoo, WooCommerce, NexoPOS, Metabase, Grafana.</li>
+          <li><b>Source-available (BSL, Elastic, FSL, SUL):</b> <b>não são open source</b> — redistribuição comercial é proibida sem licença paga. Ex.: n8n, Akaunting, Invoice Ninja, Directus, Typebot.</li>
+          <li><b>Evolution API</b> (muito usada no BR): Apache <b>com cláusulas extras</b> de marca — precisa exibir "powered by" ou comprar licença. Não trate como MIT limpo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>⚠ Regras do próprio Mercado Livre</h4>
+      <p>Vender <b>seu</b> sistema/código fonte é permitido. É <b>proibido</b> revender licenças de software de terceiros (Adobe, Microsoft 365, Windows) e qualquer conteúdo pirata. Enquadre a oferta como <b>"produto + serviço de instalação e suporte"</b> — é o formato mais seguro e o que os campeões de venda fazem.</p>
+    </div>
+    <div class="note-good">
+      <h4>✓ Onde não existe opção permissiva boa</h4>
+      <p>ERP completo, LMS (cursos) e imobiliária/classificados são dominados por copyleft. Nesses casos, <b>monte a solução</b> combinando peças permissivas (Bagisto + Grocy + Appsmith + um template admin MIT) em vez de forkar um projeto GPL.</p>
+    </div>
+  </div>
+</section>
+
+<section id="playbook">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <h2>Do repositório ao anúncio</h2>
+    </div>
+    <p class="sec-sub">O comprador não paga pelo código (está de graça no GitHub) — paga pela <b>embalagem, instalação e suporte</b>. É isso que você vende.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="s-n">PASSO 1</div>
+        <h4>Escolha &amp; renomeie</h4>
+        <p>Pegue um projeto do topo da lista, crie nome e logo próprios e remova pastas enterprise/ee.</p>
+      </div>
+      <div class="step">
+        <div class="s-n">PASSO 2</div>
+        <h4>Localize p/ o BR</h4>
+        <p>Português, Pix, Mercado Pago, impressão térmica, WhatsApp. É o que diferencia do repo cru.</p>
+      </div>
+      <div class="step">
+        <div class="s-n">PASSO 3</div>
+        <h4>Empacote a entrega</h4>
+        <p>Instalador/README, vídeo de setup e requisitos (PHP 8+, MySQL). Entrega automática reduz disputa "não recebi".</p>
+      </div>
+      <div class="step">
+        <div class="s-n">PASSO 4</div>
+        <h4>Anuncie Clássico/Premium</h4>
+        <p>Prints caprichados, lista de recursos, suporte por remoto/WhatsApp e o ângulo "revenda" quando couber.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>⚠ O maior risco operacional</h4>
+      <p>Vendedores de produto digital relatam que o Mercado Livre tende a <b>reembolsar o comprador em reclamações de "não recebi/não funcionou"</b> mesmo com prova, e a reputação cai automaticamente. Use o fluxo oficial de entrega digital, guarde comprovantes, precifique uma taxa de disputa esperada e evite ticket alto até firmar reputação.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-title">Metodologia &amp; ressalvas</div>
+    <p>Índice de Lucro = combinação qualitativa de demanda no Mercado Livre, preço alcançável, baixo esforço de customização e segurança de licença; serve para ranquear, não é projeção de faturamento. As <b>licenças foram verificadas</b> lendo o arquivo LICENSE de cada repositório no GitHub (julho/2026) — o dado mais confiável desta análise. <b>Preços e demanda</b> vêm de trechos de busca do Mercado Livre (a plataforma bloqueia leitura automática das páginas), de faixas de filtros de preço e de marketplaces de script comparáveis; trate as faixas em R$ como representativas, não como cotação atual.</p>
+    <p><b>Atenção:</b> licenças mudam (Cal.com, Directus, Spree e Akaunting mudaram recentemente). Confirme o arquivo LICENSE no momento de usar. Automação de WhatsApp tem risco de <b>plataforma</b> (banimento pela Meta) independente da licença do software — informe isso ao comprador.</p>
+  </div>
+</footer>
